@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/actions-toolkit-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/actions-toolkit-{{ version }}.tar.gz
   sha256: 49615a8bc6941fdaa374f82cfb19432379b59bcae0d2a99bf8b80d704a64091e
 
 build:
@@ -15,14 +15,14 @@ build:
     - rm -rf tests  # [not win]
     - rd /s /q tests  # [win]
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - requests
     - pygithub
 
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/yanglbme/actions-toolkit
