@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: actions-toolkit
+  version: 0.1.15
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/actions-toolkit-${{ version }}.tar.gz
+  sha256: 49615a8bc6941fdaa374f82cfb19432379b59bcae0d2a99bf8b80d704a64091e
+
+build:
+  number: 1
+  noarch: python
+  script:
+    - if: not win
+      then: rm -rf tests
+    - if: win
+      then: rd /s /q tests
+    - ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - requests
+    - pygithub
+
+tests:
+  - python:
+      imports:
+        - actions_toolkit
+      pip_check: true
+
+      python_version: ${{ python_min }}.*
+about:
+  summary: 🛠 The GitHub ToolKit for developing GitHub Actions in Python.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/yanglbme/actions-toolkit
+
+extra:
+  recipe-maintainers:
+    - pavelzw
