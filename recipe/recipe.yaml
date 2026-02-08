@@ -20,14 +20,15 @@ build:
       then: rm -rf tests
     - if: win
       then: rd /s /q tests
-    - ${{ PYTHON }} -m pip install . -vv
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python ${{ python_min }}.*
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >=${{ python_min }}
     - requests
     - pygithub
 
@@ -36,10 +37,10 @@ tests:
       imports:
         - actions_toolkit
       pip_check: true
-
       python_version: ${{ python_min }}.*
+
 about:
-  summary: 🛠 The GitHub ToolKit for developing GitHub Actions in Python.
+  summary: The GitHub ToolKit for developing GitHub Actions in Python.
   license: MIT
   license_file: LICENSE
   homepage: https://github.com/yanglbme/actions-toolkit
