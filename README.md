@@ -1,13 +1,13 @@
 About actions-toolkit-feedstock
 ===============================
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/actions-toolkit-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/actions-toolkit-fix-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/yanglbme/actions-toolkit
 
 Package license: MIT
 
-Summary: 🛠 The GitHub ToolKit for developing GitHub Actions in Python.
+Summary: The GitHub ToolKit for developing GitHub Actions in Python.
 
 Current build status
 ====================
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=21012&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/actions-toolkit-feedstock?branchName=main">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/actions-toolkit-fix-feedstock?branchName=main">
       </a>
     </td>
   </tr>
